@@ -1,268 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Atlas Technologies - Home</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-      background-color: #0d1117;
-      color: #c9d1d9;
-      display: flex;
-      height: 100vh;
-      overflow: hidden;
-    }
-
-    /* Sidebar styles */
-    nav.sidebar {
-      background-color: #161b22;
-      width: 240px;
-      max-width: 240px;
-      height: 100vh;
-      position: fixed;
-      top: 0;
-      left: 0;
-      border-right: 1px solid #30363d;
-      padding-top: 3.5rem;
-      box-sizing: border-box;
-      overflow-y: auto;
-      transform: translateX(0);
-      transition: transform 0.3s ease;
-      z-index: 1000;
-    }
-
-    nav.sidebar.closed {
-      transform: translateX(-240px);
-    }
-
-    nav.sidebar ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    nav.sidebar li {
-      position: relative;
-    }
-
-    nav.sidebar > ul > li {
-      border-bottom: 1px solid #30363d;
-    }
-
-    nav.sidebar a {
-      display: block;
-      color: #c9d1d9;
-      padding: 0.75rem 1.5rem;
-      text-decoration: none;
-      font-weight: 300;
-      font-size: 1.125rem;
-      user-select: none;
-      cursor: pointer;
-      transition: background-color 0.2s ease;
-      position: relative;
-    }
-
-    nav.sidebar a:hover {
-      background-color: #238636;
-      color: white;
-    }
-
-    nav.sidebar a.dropdown-toggle::after {
-      content: "▸";
-      position: absolute;
-      right: 1.5rem;
-      transition: transform 0.3s ease;
-    }
-
-    nav.sidebar li.show > a.dropdown-toggle::after {
-      transform: rotate(90deg);
-    }
-
-    nav.sidebar ul ul {
-      display: none;
-      flex-direction: column;
-      background-color: #21262d;
-    }
-
-    nav.sidebar ul ul li {
-      border: none;
-    }
-
-    nav.sidebar ul ul a {
-      font-size: 1rem;
-      padding-left: 2.5rem;
-      color: #8b949e;
-      font-weight: 400;
-    }
-
-    nav.sidebar ul ul a:hover {
-      background-color: #2ea043;
-      color: white;
-    }
-
-    nav.sidebar li.show > ul {
-      display: flex;
-    }
-
-    /* Main content */
-    main.content {
-      margin-left: 240px;
-      padding: 2rem;
-      flex: 1;
-      overflow-y: auto;
-      transition: margin-left 0.3s ease;
-    }
-
-    main.content.full {
-      margin-left: 0;
-    }
-
-    main.content h1 {
-      font-weight: 300;
-      font-size: 2rem;
-      color: #58a6ff;
-    }
-
-    /* Hamburger menu */
-    .hamburger {
-      position: fixed;
-      top: 1rem;
-      left: 1rem;
-      width: 30px;
-      height: 22px;
-      cursor: pointer;
-      z-index: 1100;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .hamburger span {
-      display: block;
-      height: 4px;
-      background-color: #c9d1d9;
-      border-radius: 2px;
-      transition: all 0.3s ease;
-    }
-
-    /* Animate hamburger when open */
-    .hamburger.open span:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-    .hamburger.open span:nth-child(2) {
-      opacity: 0;
-    }
-    .hamburger.open span:nth-child(3) {
-      transform: rotate(-45deg) translate(6px, -6px);
-    }
-
-    @media (min-width: 768px) {
-      /* Always show sidebar on wider screens */
-      nav.sidebar {
-        transform: translateX(0);
-      }
-      main.content {
-        margin-left: 240px;
-      }
-      .hamburger {
-        display: none;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlas IT Solutions</title>
+    <style>
+        /* Simple, clean styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: #0056b3;
+            color: white;
+            padding: 20px 0;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        section {
+            padding: 60px 0;
+        }
+        
+        h1, h2, h3 {
+            margin-bottom: 20px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        .hero {
+            background-color: #f0f8ff;
+            text-align: center;
+            padding: 80px 0;
+        }
+        
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #0056b3;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 5px;
+            padding: 30px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-card h3 {
+            color: #0056b3;
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .contact-info {
+            margin-top: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 10px;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">Atlas</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <div class="hamburger" id="hamburger" aria-label="Toggle menu" role="button" tabindex="0">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>IT Solutions for Modern Business</h1>
+            <p>Hardware, software, and comprehensive IT services to power your business</p>
+            <a href="#contact" class="btn">Contact Us</a>
+        </div>
+    </section>
 
-  <nav class="sidebar" id="sidebar" aria-label="Main navigation">
-    <ul>
-      <li>
-        <a href="#" class="dropdown-toggle">Home</a>
-        <ul>
-          <li><a href="index.html">Overview</a></li>
-          <li><a href="updates.html">Updates</a></li>
-          <li><a href="team.html">Team</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#" class="dropdown-toggle">Products</a>
-        <ul>
-          <li><a href="products.html#software">Software</a></li>
-          <li><a href="products.html#hardware">Hardware</a></li>
-          <li><a href="products.html#services">Services</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#" class="dropdown-toggle">Solutions</a>
-        <ul>
-          <li><a href="solutions.html#enterprise">Enterprise</a></li>
-          <li><a href="solutions.html#smallbusiness">Small Business</a></li>
-          <li><a href="solutions.html#personal">Personal</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#" class="dropdown-toggle">Services</a>
-        <ul>
-          <li><a href="services.html#consulting">Consulting</a></li>
-          <li><a href="services.html#support">Support</a></li>
-          <li><a href="services.html#training">Training</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#" class="dropdown-toggle">Support</a>
-        <ul>
-          <li><a href="support.html#faq">FAQ</a></li>
-          <li><a href="support.html#contact">Contact Us</a></li>
-          <li><a href="support.html#resources">Resources</a></li>
-        </ul>
-      </li>
-    </ul>
-  </nav>
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <p>We provide end-to-end IT solutions designed to meet your business needs.</p>
+            
+            <div class="services">
+                <div class="service-card">
+                    <h3>Hardware Solutions</h3>
+                    <p>Complete hardware infrastructure design and implementation.</p>
+                    <ul>
+                        <li>Server infrastructure</li>
+                        <li>Networking equipment</li>
+                        <li>Workstation setup</li>
+                        <li>Hardware maintenance</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Software Solutions</h3>
+                    <p>Custom and commercial software to streamline your operations.</p>
+                    <ul>
+                        <li>Custom software development</li>
+                        <li>Software integration</li>
+                        <li>Software deployment</li>
+                        <li>Updates and maintenance</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <h3>IT Support</h3>
+                    <p>Reliable IT support to keep your business running smoothly.</p>
+                    <ul>
+                        <li>Technical support</li>
+                        <li>Troubleshooting</li>
+                        <li>System maintenance</li>
+                        <li>IT consulting</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <main class="content" id="mainContent">
-    <h1>Welcome to Atlas Technologies</h1>
-    <p>This is the homepage content area. Your main content goes here.</p>
-  </main>
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Ready to transform your IT infrastructure? Get in touch with our team today.</p>
+            
+            <div class="contact-info">
+                <p><strong>Email:</strong> atlascapital.lsbs@gmail.com</p>
+                <p><strong>Phone:</strong> (712) 203-3133</p>
+                <p><strong>Address:</strong> 3133 Myrtle Street, Sioux City, 51103</p>
+            </div>
+        </div>
+    </section>
 
-  <script>
-    const hamburger = document.getElementById('hamburger');
-    const sidebar = document.getElementById('sidebar');
-    const mainContent = document.getElementById('mainContent');
-
-    hamburger.addEventListener('click', () => {
-      sidebar.classList.toggle('closed');
-      hamburger.classList.toggle('open');
-      mainContent.classList.toggle('full');
-    });
-
-    // Allow keyboard toggle (Enter or Space)
-    hamburger.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        hamburger.click();
-      }
-    });
-
-    // Dropdown toggle for submenu
-    document.querySelectorAll('.dropdown-toggle').forEach(link => {
-      link.addEventListener('click', e => {
-        const parentLi = e.target.parentElement;
-        if (parentLi.querySelector('ul')) {
-          e.preventDefault();
-          parentLi.classList.toggle('show');
-        }
-      });
-    });
-  </script>
-
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Atlas Capital, Inc. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
